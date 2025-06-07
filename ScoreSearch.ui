@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScoreSearch</class>
+ <widget class="QMainWindow" name="ScoreSearch">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>学生成绩查询</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../rc.qrc">
+    <normaloff>:/ico/images/appstu.ICO</normaloff>:/ico/images/appstu.ICO</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>专业：</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cboxMajor">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>40</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnExit">
+    <property name="geometry">
+     <rect>
+      <x>709</x>
+      <y>3</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnQuery">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>0</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>查询</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>课程：</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cboxSubject">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>40</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="editName">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>输入学生姓名：</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tbResult">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>751</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+    </property>
+    <column>
+     <property name="text">
+      <string>学生编号</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>学生姓名</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>专业</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>班级</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>课程</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>成绩编号</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>成绩</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../rc.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>editName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>btnQuery</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>269</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>674</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnExit</sender>
+   <signal>clicked()</signal>
+   <receiver>ScoreSearch</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>734</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboxMajor</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>btnQuery</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>645</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboxSubject</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>btnQuery</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>334</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>645</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
